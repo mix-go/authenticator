@@ -1,39 +1,39 @@
-> Produced by OpenMix: [https://openmix.org](https://openmix.org/mix-go)
+> Developed by OpenMix: [https://openmix.org](https://openmix.org/mix-go)
 
-## Mix Google Authenticator
+## Mix Authenticator
 
 Install
 
 ```
-go get github.com/mix-go/googleauthenticator@latest
+go get github.com/mix-go/authenticator@latest
 ```
 
 Generate Secret
 
 ```go
-secret := googleauthenticator.GenerateSecret()
+secret := authenticator.GenerateSecret()
 ```
 
 Generate Code
 
 ```go
-code := googleauthenticator.GenerateToken(secret)
+code := authenticator.GenerateToken(secret)
 ```
 
 Verify Code
 
 ```go
-ok := googleauthenticator.VerifyToken(secret, code)
+ok := authenticator.VerifyToken(secret, code)
 // or
-ok := googleauthenticator.VerifyTokenCustom(secret, code, 60)
+ok := authenticator.VerifyTokenCustom(secret, code, 60)
 ```
 
 Generate Url
 
 ```go
-uri := googleauthenticator.GenerateTotpUri("Foo", "bar", secret)
+uri := authenticator.GenerateTotpUri("Foo", "bar", secret)
 // or
-url := googleauthenticator.GenerateQRCodeGoogleUrl("Foo", "bar", secret)
+url := authenticator.GenerateQRCodeGoogleUrl("Foo", "bar", secret)
 ```
 
 ## License
